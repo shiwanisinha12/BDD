@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Gmail Sign Up</title>
+<script language="javascript">
+function checkName()
+{
+	
+	var name = document.forms["RegForm"]["fname"]; 
+	 if (name.value == "")                                 
+	    {
+	        window.alert("Please enter your name.");
+	        name.focus();
+	        return false;
+	    }
+	 
+	 
+}
+function check()
+{
+	if(document.registrationform.fname.value=="")
+	 {
+	  document.getElementById('une').innerHTML = "First name  should not be empty";
+	  registrationform.fname.focus();
+	  return(false);
+	}
+}
+
+function checkPattern(){
+    var elem = document.getElementById("txt1");
+
+    var pattern = elem.getAttribute("[A-Z][a-zA-Z]*");
+    var re = new RegExp(pattern);
+    if (re.test(elem.value)) {
+    	  document.getElementById('une').innerHTML = "First name  should not be empty";
+    	  registrationform.fname.focus();
+			return(false);
+    } else {
+        return(true);
+    }
+}
+</script>
+</head>
+<body>
+<h1>Gmail Sign Up</h1>
+<form name="registrationform" action="success.html" onsubmit="return checkPattern()">
+<table>
+<tr>
+<td>FirstName : </td>
+<td><input type="text" id="txt1" name="fname" pattern="[A-Za-z]*" title="should contain only letters"/></td>
+<font color="red"> <td id="une"> </td> </font>
+</tr>
+
+<tr>
+<td>MiddleName : </td>
+<td><input type="text" id="txt2" name="mid"/></td>
+</tr>
+<tr>
+<td>LastName : </td>
+<td><input type="text" id="txt3" name="lname" class="last"/></td>
+</tr>
+<tr>
+<td>Mobile Number : </td>
+<td><input type="number" id="txt4" name="phone"/>
+</td>
+</tr>
+<tr>
+<td>Country :</td>
+<td><select id="country">
+<option value="australia">Australia</option>
+<option value="india">India</option>
+<option value="america">America</option>
+<option value="england">England</option>
+</select></td>
+</tr>
+<tr>
+<td>DOB :</td>
+<td><select id="date">
+<option value="one">1</option>
+<option value="two">2</option>
+<option value="three">3</option>
+<option value="four">4</option>
+<option value="five">5</option>
+</select></td>
+<td>-</td>
+<td><select id="month">
+<option value="jan">Jan</option>
+<option value="feb">Feb</option>
+<option value="march">March</option>
+<option value="april">April</option>
+<option value="may">May</option>
+</select></td>
+<td>-</td>
+<td><select id="year">
+<option value="year1">1996</option>
+<option value="year2">1997</option>
+<option value="year3">1998</option>
+<option value="year4">1999</option>
+<option value="year5">May</option>
+</select></td>
+</tr>
+<tr>
+<td>Gender :
+</td>
+<td><input type="radio" name="gender"/>Male</td>
+<td><input type="radio" name="gender"/>Female</td>
+<td><input type="radio" name="gender"/>Others</td>
+</tr>
+<tr>
+<td>UserName :</td>
+<td><input type="text" name="user" id="username"/>
+</td>
+</tr>
+<tr>
+<td>Password :</td>
+<td><input type="password" name="pass" id="password"/>
+</td></tr>
+
+<tr>
+<td>Confirm Password :</td>
+<td><input type="password" name="conpass" id="confirm"/>
+</td></tr>
+
+<tr>
+<td><input type="checkbox" id="accept"/>I accept the terms and conditions</td>
+</tr>
+
+<tr>
+<td>
+<input type="submit" value="sign up" id="signin"/>
+</td></tr>
+</table>
+</form>
+</body>
+</html>
